@@ -1,2 +1,3 @@
-***Godot Screen Scrolling
+***Godot Screen Scrolling***
+
 This demo shows how to scroll the screen when the player reaches the edge of the viewport in Godot. This approach uses all stock nodes and should work with all current versions of Godot in the 4.X series and possibly even older versions.
