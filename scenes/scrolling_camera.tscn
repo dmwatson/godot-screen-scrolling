@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dij3wm2ymr82x"]
+
+[ext_resource type="Script" uid="uid://caymhns6iapcj" path="res://scenes/scroll_follow.gd" id="1_3kerf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7c3h"]
+size = Vector2(640, 480)
+
+[node name="ScrollingCamera" type="Camera2D" unique_id=579790172]
+anchor_mode = 0
+process_callback = 0
+limit_enabled = false
+script = ExtResource("1_3kerf")
+scroll_time = 0.75
+
+[node name="Area2D" type="Area2D" parent="." unique_id=185155772]
+collision_layer = 0
+collision_mask = 2
+input_pickable = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1872559986]
+position = Vector2(320, 240)
+shape = SubResource("RectangleShape2D_w7c3h")
