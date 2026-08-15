@@ -25,7 +25,7 @@ func on_player_leave(body: Node2D) -> void:
 
 	if body is Player:
 		move_target = offset
-		#move_target = position
+		
 		# Get their velocity
 		var player = body as Player
 		
@@ -41,7 +41,7 @@ func on_player_leave(body: Node2D) -> void:
 			move_target.x += screen_size.x
 		
 		# Disable movement while scrolling
-		player.active = false
+		player.set_physics_process(false)
 		
 		# Turn off collision detection for now to avoid any potential false positives
 		detector.set_collision_mask_value(2, false)
@@ -53,4 +53,4 @@ func on_player_leave(body: Node2D) -> void:
 		await tween.finished
 		detector.global_position = move_target
 		detector.set_collision_mask_value(2, true)
-		player.active = true
+		player.set_physics_process(true)
