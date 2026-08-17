@@ -15,8 +15,7 @@ var move_target: Vector2
 
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
-	get_viewport()
-	#print(screen_size)
+
 	detector.body_exited.connect(on_player_leave)
 	detector.get_child(0).shape.size = screen_size
 	detector.get_child(0).position = screen_size / 2.0
